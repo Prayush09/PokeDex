@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex-Wiki for Pokemon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./Images/pngwing.com.png" width="40">
+            <a href="index.html" class="logo-txt">Poké<span class="txt-gradient">Dex</span></a>
+        </div>
+        <div class="nav-btn">
+            <a href="https://x.com/prayush_k">Twitter</a>
+            <a href="https://github.com/Prayush09" class="github-btn"><i class="fa-regular fa-star"></i>Github</a>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="image">
+            <img src="./Images/pokeomon-removebg-preview.png" class="banner-img">
+        </div>
+        <div class="txt-content">
+            <div class="title-container">
+                <div class="title-and-image-wrapper">
+                    <img class="flash-render1" src="./Images/flast.png" alt="3D Render">
+                    <h3 class="title">Gotta catch em all!</h3>
+                    <img class="flash-render2" src="./Images/flast.png" alt="3D Render">
+                </div>
+            </div>
+            <p class="details">Find out everything about your pokemon with <span class="logo-txt">Poké</span><span class="txt1-gradient">Dex</span>.<br>
+            <span class="highlight">Select number of Pokémon cards</span> you want to view and <span class="highlight">choose the perfect Pokémon type</span>. Whether you're a casual fan or a dedicated collector, discover all the details of each Pokémon and expand your Poké-knowledge!</p>
+        </div>
+        <div class="input">
+            <!-- Here use the document.getElementById and then addEventListener("submit", ()=>{}), not doing any onclick="start(event)" business-->
+            <form id="pokeForm">
+                <input type="text" id="pokemon-name" class="pokemon-type" placeholder="Enter the name of Pokemon">
+                <span>OR</span>
+                <input list="pokemon-types" id="pokemonType" class="pokemon-type" placeholder="Enter Pokemon Type">
+                <datalist id="pokemon-types">
+                    <option value="Normal">
+                    <option value="Fire">
+                    <option value="Water">
+                    <option value="Grass">
+                    <option value="Electric">
+                    <option value="Ice">
+                    <option value="Fighting">
+                    <option value="Poison">
+                    <option value="Ground">
+                    <option value="Flying">
+                    <option value="Psychic">
+                    <option value="Bug">
+                    <option value="Rock">
+                    <option value="Ghost">
+                    <option value="Dragon">
+                    <option value="Dark">
+                    <option value="Steel">
+                    <option value="Fairy">
+                </datalist>
+                <span>and</span>
+                <input type="number" id="pokeCount" class="pokemon-type" min="1" max="100" placeholder="Number of Cards">
+                <button id="submit"><i class="fa-solid fa-magnifying-glass"></i>Fetch Cards</button>
+            </form>
+        </div>
+
+        <div class="loading">
+        <div class="loader" id="loader">
+            <img src="./Images/pokeball-pokemon-svgrepo-com.svg" width="30">
+        </div>
+        <span class="load-txt">Loading...</span>
+        </div>
+        <div class="container" id="scroll">
+            <div style="font-size: 1.1rem; color:rgb(13, 0, 255)">Have a look!</div>
+            <div class="field">
+                <div class="mouse"></div>
+            </div>
+        </div>
+    </main>
+
+    <section class="display-section" id="parent">
+        <div class="poke-cards" id="parentCards">
+            
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>From a Pokémon fan to another.<br> Created for the joy of <span class="txt1-gradient">Poké</span><span class="txt1-gradient">mon</span> By <span style="color: red;">Prayush</span> <span style="color: rgb(255, 255, 0);">Giri</span></p>
+            <img id="pokemon-image" alt="Cute Pokémon" />
+        </div>
+    </footer>    
+</body>
+</html>
